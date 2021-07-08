@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>work5</title>
+</head>
+<body>
+    <script>
+        var store = new Store({
+         state:{
+             count:1,
+             abc:'abc default value'
+         },
+         mutations:{
+             increament(state,num){
+                 state.count += num;
+             },
+             abc(state,value){
+                 state.abc = value;
+             }
+         }
+     })
+ 
+     store.commit('increament',8);
+     store.commit('new value');
+     console.log(store.state.count) // 9;
+     console.log(store.state.abc) // new value;
+    </script>
+</body>
+</html>
